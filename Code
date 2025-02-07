@@ -1,0 +1,20 @@
+import itertools
+
+# Assign multiple values at once
+a, b = 17, 42
+print(f"{a =}, {b =}")  # Output: a = 17, b = 42
+
+# Swap variables
+a, b = b, a
+print(f"{a =}, {b =}")  # Output: a = 42, b = 17
+
+# Fibonacci generator function
+def fib():
+    a, b = 1, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+# Generate first 12 Fibonacci numbers
+fib_sequence = list(itertools.islice(fib(), 12))
+print(fib_sequence)  # Output: [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
